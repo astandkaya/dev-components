@@ -42,6 +42,8 @@
         </section>
       </div>
     </div>
+
+    <x-admin.modals.delete />
   </body>
 
   @stack('page-scripts')
