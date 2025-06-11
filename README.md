@@ -6,3 +6,6 @@
 
 後で書く
 
+## メモ書きしておくところ
+
+`git config core.hooksPath .githooks`の実行が必要

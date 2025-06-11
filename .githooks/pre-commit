@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# Sailを反映させたpintを実行
+./vendor/bin/sail pint
+
+# pintコマンドが成功した場合のみコミットを続行
+if [ $? -ne 0 ]; then
+    echo "PHP Code Style Checker (Pint) failed. Aborting commit."
+    exit 1
+fi
