@@ -9,3 +9,4 @@
 ## メモ書きしておくところ
 
 `git config core.hooksPath .githooks`の実行が必要
+`php artisan vendor:publish --tag=log-viewer-assets --force`が必要
