@@ -1,7 +1,17 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\Auth\AuthenticatedSessionController;
+use Illuminate\Routing\Router;
 
-Route::get('/', function () {
-    return view('admin.dashboard');
+// @var Router $router
+
+$router->middleware(['guest:admin'])->group(function () use ($router) {
+    $router->get('/login', [AuthenticatedSessionController::class, 'create'])->name('login');
+    $router->post('/login', [AuthenticatedSessionController::class, 'store']);
+});
+
+$router->middleware(['auth:admin'])->group(function () use ($router) {
+    $router->view('/', 'admin.dashboard')->name('dashboard');
+
+    $router->post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
