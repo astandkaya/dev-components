@@ -34,3 +34,8 @@
     @endswitch
 });
 </script>
+{{-- select2 --}}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.min.js" integrity="sha256-AFAYEOkzB6iIKnTYZOdUf9FFje6lOTYdwRJKwTN5mks=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" integrity="sha256-FdatTf20PQr/rWg+cAKfl6j4/IY3oohFAJ7gVC3M34E=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" integrity="sha256-XLNUEfzPGHBeStES2DbLUURZ3e793BablwzJlYj6W2Q=" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/i18n/ja.js"></script>
