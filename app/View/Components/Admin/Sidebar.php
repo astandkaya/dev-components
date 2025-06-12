@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\View\Components\Admin;
 
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -23,6 +22,11 @@ class Sidebar extends Component
                 'name' => 'Home',
                 'icon' => 'bi-house-fill',
                 'link' => url('/admin'),
+            ],
+            [
+                'name' => '検証用',
+                'icon' => 'bi-tools',
+                'link' => route('admin.development'),
             ],
             // サンプルデータ
             [
@@ -57,7 +61,7 @@ class Sidebar extends Component
         ];
     }
 
-    public function render(): View|Closure|string
+    public function render(): View
     {
         return view('components.admin.sidebar');
     }

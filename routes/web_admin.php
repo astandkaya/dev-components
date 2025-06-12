@@ -12,6 +12,7 @@ $router->middleware(['guest:admin'])->group(function () use ($router) {
 
 $router->middleware(['auth:admin'])->group(function () use ($router) {
     $router->view('/', 'admin.dashboard')->name('dashboard');
+    $router->view('/development', 'admin.development')->name('development');
 
     $router->post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
 });
