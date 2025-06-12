@@ -39,3 +39,48 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" integrity="sha256-FdatTf20PQr/rWg+cAKfl6j4/IY3oohFAJ7gVC3M34E=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" integrity="sha256-XLNUEfzPGHBeStES2DbLUURZ3e793BablwzJlYj6W2Q=" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/i18n/ja.js"></script>
+<script>
+  $(() => {
+    $('.js-select2').select2({
+      theme: 'bootstrap-5',
+      width: 'auto',
+      language: 'ja',
+      allowClear: true,
+      placeholder: function () {
+        return $(this).data('placeholder');
+      }
+    });
+
+    $('.js-select2-ajax').select2({
+      theme: 'bootstrap-5',
+      width: 'auto',
+      language: 'ja',
+      allowClear: true,
+      placeholder: function () {
+        return $(this).data('placeholder');
+      },
+      ajax: {
+        url: function () {
+          return $(this).data('fetch-url');
+        },
+        dataType: 'json',
+        processResults(response) {
+            let options = [];
+            response.data.forEach((data) => {
+                options.push({
+                    id: data.id,
+                    text: data.text
+                });
+            });
+
+            return {
+                results: options,
+                pagination: {
+                    more: (response.next_page_url !== null)
+                }
+            };
+        }
+      }
+    });
+  });
+</script>
