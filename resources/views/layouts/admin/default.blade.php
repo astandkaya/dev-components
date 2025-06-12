@@ -29,25 +29,7 @@
         </ul>
       </nav>
 
-      <aside class="main-sidebar sidebar-light-primary elevation-1 position-fixed min-vh-100 d-flex flex-column justify-content-between">
-        <div>
-          <a href="/" class="brand-link">
-            {{ config('app.name') }}
-          </a>
-          <div class="sidebar">
-            <nav class="mt-2">
-              <ul class="nav nav-pills nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu">
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <div class="mb-4 px-4">
-          <form method="POST" action="{{ route('admin.logout') }}">
-            @csrf
-            <input class="btn btn-secondary btn-block" type="submit" value="ログアウト">
-          </form>
-        </div>
-      </aside>
+      <x-admin.sidebar />
 
       <div class="content-wrapper bg-white">
         <section class="content-header">
