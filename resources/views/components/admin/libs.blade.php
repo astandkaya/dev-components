@@ -10,3 +10,27 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" integrity="sha384-XGjxtQfXaH2tnPFa9x+ruJTuLE3Aa6LhHSWRr1XeTyhezb4abCG4ccI5AkVDxqC+" crossorigin="anonymous">
 {{-- override-bootstrap --}}
 <link rel="stylesheet" href="{{ asset('css/override-bootstrap.css') }}">
+{{-- toastr --}}
+<script src="https://cdn.jsdelivr.net/npm/toastr@2.1.4/toastr.min.js" defer></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css" integrity="sha256-R91pD48xW+oHbpJYGn5xR0Q7tMhH4xOrWn1QqMRINtA=" crossorigin="anonymous">
+<script>
+  $(() => {
+    toastr.options = {
+      "progressBar": true,
+    }
+    @switch (true)
+        @case (session('success'))
+            toastr.success('{{ session('success') }}');
+            @break
+        @case (session('info'))
+            toastr.info('{{ session('info') }}');
+            @break
+        @case (session('warning'))
+            toastr.warning('{{ session('warning') }}');
+            @break
+        @case (session('error'))
+            toastr.error('{{ session('error') }}');
+            @break
+    @endswitch
+});
+</script>
