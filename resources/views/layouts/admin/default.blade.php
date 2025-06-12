@@ -21,20 +21,18 @@
 
   <body>
     <div class="wrapper">
-      <nav class="main-header navbar navbar-expand navbar-light">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a class="nav-link d-flex align-items-center" data-widget="pushmenu" href="#"><i class="bi bi-list fs-2"></i></a>
-          </li>
-        </ul>
-      </nav>
+      <x-admin.header />
 
       <x-admin.sidebar />
 
       <div class="content-wrapper bg-white">
         <section class="content-header">
           <div class="container-fluid">
-            
+            <div class="row mb-2">
+              <div class="col-sm-6">
+                <h1>@yield("title")</h1>
+              </div>
+            </div>
           </div>
         </section>
         <section class="content">
