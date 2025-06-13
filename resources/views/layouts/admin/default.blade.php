@@ -14,16 +14,16 @@
       {{ config('app.name') }}
     </title>
 
-    <x-admin.libs />
+    <x-admin.organisms.libs />
     
     @stack('page-styles')
   </head>
 
   <body>
     <div class="wrapper">
-      <x-admin.header />
+      <x-admin.organisms.header />
 
-      <x-admin.sidebar />
+      <x-admin.organisms.sidebar />
 
       <div class="content-wrapper bg-white">
         <section class="content-header">

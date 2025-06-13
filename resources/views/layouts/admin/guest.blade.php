@@ -14,7 +14,7 @@
       {{ config('app.name') }}
     </title>
 
-    <x-admin.libs />
+    <x-admin.organisms.libs />
     
     @stack('page-styles')
   </head>
