@@ -4,6 +4,7 @@
 
 @section("content")
 @php
+  $admins = \App\Models\Admin::paginate(3);
   $modal_json_data = [
     'ID' => 1,
     '説明' => '削除対象の説明',
@@ -41,5 +42,24 @@
       <i class="bi bi-info-circle"></i> 詳細
     </a>
   </div>
+
+  {{-- 絞り込みフォーム（一覧画面用） --}}
+  <h3>Search Form</h3>
+  <x-admin.molecuels.search-form>
+    <x-slot:inputs>
+      <div class="col-12 col-sm-6">
+        <label for="name" class="form-label">name</label>
+        <input type="text" id="name" name="name" class="form-control" value="{{ request()->input('name') }}">
+      </div>
+      <div class="col-12 col-sm-6">
+        <label for="company" class="form-label">company</label>
+        <select id="company" name="company" class="form-select">
+          <option value="">全て</option>
+          <option value="1" @selected(request()->input('company') === '1')>hoge</option>
+          <option value="2" @selected(request()->input('company') === '2')>fuga</option>
+        </select>
+      </div>
+    </x-slot>
+  </x-admin.molecuels.index.search-form>
 </div>
 @endsection
