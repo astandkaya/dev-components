@@ -61,5 +61,25 @@
       </div>
     </x-slot>
   </x-admin.molecuels.index.search-form>
+
+  {{-- ボタングループ --}}
+  <h3>Button Group</h3>
+  <x-admin.molecuels.button-group>
+    <x-slot:left>
+      <a href="#" class="btn btn-outline-primary">
+        <i class="bi-download"></i> CSV出力 とか
+      </a>
+    </x-slot>
+    <x-slot:center>
+      <a href="#" class="btn btn-primary">
+        <i class="bi-plus-lg"></i> 真ん中
+      </a>
+    </x-slot>
+    <x-slot:right>
+      <a href="#" class="btn btn-primary">
+        <i class="bi-plus-lg"></i> 新規作成
+      </a>
+    </x-slot>
+  </x-admin.molecuels.common.button-group>
 </div>
 @endsection
