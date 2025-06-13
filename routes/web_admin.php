@@ -12,7 +12,11 @@ $router->middleware(['guest:admin'])->group(function () use ($router) {
 
 $router->middleware(['auth:admin'])->group(function () use ($router) {
     $router->view('/', 'admin.dashboard')->name('dashboard');
-    $router->view('/development', 'admin.development')->name('development');
 
     $router->post('logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+
+    $router->group(['prefix' => '/developments', 'as' => 'developments.'], function () use ($router) {
+        $router->view('/atom', 'admin.development.atom')->name('atom');
+        $router->view('/molecuel', 'admin.development.molecuel')->name('molecuel');
+    });
 });

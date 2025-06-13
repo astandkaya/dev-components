@@ -22,39 +22,22 @@ class Sidebar extends Component
                 'name' => 'Home',
                 'icon' => 'bi-house-fill',
                 'link' => url('/admin'),
+                'hidden' => false,
             ],
             [
-                'name' => '検証用',
+                'name' => 'Developments',
                 'icon' => 'bi-tools',
-                'link' => route('admin.development'),
-            ],
-            // サンプルデータ
-            [
-                'name' => 'ダミー', // メニュー名
-                'icon' => 'bi-box-fill', // BootstrapIcons（https://icons.getbootstrap.com/）
-                'link' => '#', // リンク先（`route('hoge')`なども可）
-            ],
-            [
-                'name' => 'ダミー（非表示）',
-                'icon' => 'bi-box-fill',
-                'link' => '#',
-                'hidden' => true, // 非表示にする場合は`hidden`キーをtrueに設定
-            ],
-            [
-                'name' => 'ユーザー（ダミー）',
-                'icon' => 'bi-person-fill',
+                'hidden' => false,
                 'children' => [
-                    // 入れ子にする場合は`children`をキーとして配列を渡す
-                    // `children`以下は現状1階層のみ可
                     [
-                        'name' => '一覧',
-                        'icon' => 'bi-people-fill',
-                        'link' => '#',
+                        'name' => 'Molecuels',
+                        'icon' => 'bi-grid',
+                        'link' => route('admin.developments.molecuel'),
                     ],
                     [
-                        'name' => '新規作成',
-                        'icon' => 'bi-person-plus-fill',
-                        'link' => '#',
+                        'name' => 'Atoms',
+                        'icon' => 'bi-square',
+                        'link' => route('admin.developments.atom'),
                     ],
                 ],
             ],

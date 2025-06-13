@@ -1,6 +1,6 @@
 @extends("layouts.admin.default")
 
-@section("title", "検証用")
+@section("title", "Developments - Atoms")
 
 @section("content")
 <div class="d-flex flex-column gap-4 ps-2">
@@ -22,7 +22,7 @@
   </div>
 
   <div>
-    <h3>モーダル</h3>
+    <h3>Modals</h3>
     @php
       $modal_json_data = [
         'ID' => 1,
