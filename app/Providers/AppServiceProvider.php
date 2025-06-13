@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -25,5 +26,8 @@ class AppServiceProvider extends ServiceProvider
 
         // view()の対象にviews/pagesディレクトリを追加
         View::getFinder()->prependLocation(resource_path('views/pages'));
+
+        // PaginatorのBootstrapスタイルを使用
+        Paginator::useBootstrap();
     }
 }

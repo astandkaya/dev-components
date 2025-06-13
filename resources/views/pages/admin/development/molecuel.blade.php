@@ -81,5 +81,9 @@
       </a>
     </x-slot>
   </x-admin.molecuels.common.button-group>
+
+  {{-- ページネーション  --}}
+  <h3>Pagination</h3>
+  <x-admin.molecuels.pagination :contents="$admins" />
 </div>
 @endsection
