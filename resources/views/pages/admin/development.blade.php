@@ -47,6 +47,16 @@
     >
       <i class="bi bi-trash"></i> 削除
     </a>
+    {{-- インフォメーション --}}
+    <a href="#"
+      class="btn btn-info"
+      data-title="情報詳細"
+      data-json-data='@json($modal_json_data)'
+      data-bs-toggle="modal"
+      data-bs-target="#js-information-modal"
+    >
+      <i class="bi bi-info-circle"></i> 詳細
+    </a>
   </div>
 </div>
 @endsection
