@@ -15,6 +15,8 @@
     </title>
 
     <x-admin.organisms.libs />
+
+    <link rel="stylesheet" href="{{ asset('css/admin/common.css') }}">
     
     @stack('page-styles')
   </head>
