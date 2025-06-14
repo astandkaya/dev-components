@@ -15,6 +15,8 @@
     </title>
 
     <x-admin.organisms.libs />
+
+    <link rel="stylesheet" href="{{ asset('css/admin/common.css') }}">
     
     @stack('page-styles')
   </head>
@@ -43,8 +45,8 @@
       </div>
     </div>
 
-    <x-admin.modals.delete />
-    <x-admin.modals.information />
+    <x-admin.molecuels.modals.delete />
+    <x-admin.molecuels.modals.information />
   </body>
 
   @stack('page-scripts')
