@@ -4,7 +4,13 @@
 
 ## 環境構築
 
-後で書く
+```
+$ composer install
+$ cp .env.example .env
+$ sail up -d
+$ sail art key:generate
+$ sail art migrate --seed
+```
 
 ## メモ書きしておくところ
 
