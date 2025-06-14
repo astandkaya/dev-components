@@ -82,6 +82,51 @@
     </x-slot>
   </x-admin.molecuels.common.button-group>
 
+  {{-- テーブル --}}
+  <h3>Table</h3>
+  <x-admin.molecuels.table :contents="$admins">
+    <x-admin.molecuels.table.row is-header col-count="6" class="fw-bold">
+      <x-admin.molecuels.table.col content="ID" />
+      <x-admin.molecuels.table.col content="名前" />
+      <x-admin.molecuels.table.col content="メールアドレス" />
+      <x-admin.molecuels.table.col content="更新日" />
+      <x-admin.molecuels.table.col content="作成日" />
+    </x-admin.molecuels.table.row>
+
+    @foreach ($admins as $admin)
+      <x-admin.molecuels.table.row col-count="6">
+        <x-admin.molecuels.table.col
+          title="ID : "
+          content="{{ $admin->id }}"
+        />
+        <x-admin.molecuels.table.col
+          title="名前 : "
+          content="{{ $admin->name }}"
+        />
+        <x-admin.molecuels.table.col
+          title="メールアドレス : "
+          content="{{ $admin->email }}"
+        />
+        <x-admin.molecuels.table.col
+          title="更新日 : "
+          content="{{ $admin->updated_at->format('Y-m-d H:i') }}"
+        />
+        <x-admin.molecuels.table.col
+          title="作成日 : "
+          content="{{ $admin->created_at->format('Y-m-d H:i') }}"
+        />
+        <x-admin.molecuels.table.col class="justify-content-end">
+          <x-slot:content>
+            <a class="btn btn-primary btn-sm sm-auto" href="#">
+              <i class="bi bi-pencil-square"></i>
+              <span class="d-md-none">編集</span>
+            </a>
+          </x-slot:content>
+        </x-admin.molecuels.table.col>
+      </x-admin.molecuels.table.row>
+    @endforeach
+  </x-admin.molecuels.table>
+
   {{-- ページネーション  --}}
   <h3>Pagination</h3>
   <x-admin.molecuels.pagination :contents="$admins" />
