@@ -130,5 +130,13 @@
   {{-- ページネーション  --}}
   <h3>Pagination</h3>
   <x-admin.molecuels.pagination :contents="$admins" />
+
+  {{-- 汎用コンテナ（主に編集ページ用） --}}
+  <h3>Container</h3>
+  <x-admin.molecuels.form-container action="#" method="GET">
+    @csrf
+    @method('PUT')
+
+  </x-admin.molecuels.form-container>
 </div>
 @endsection
